@@ -1,0 +1,51 @@
+#alumnosModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='privacyModalLabel', aria-hidden='true')
+    .modal-dialog.modal-lg.modal-dialog-centered(role='document')
+        .modal-content
+            .modal-header.custom-modal-header
+                h5.modal-title#alumnosModalLabel
+                button.btn.btn-dark.custom-btn-close(type='button', data-bs-dismiss='modal', aria-label='Close') X
+            .modal-body
+                .container
+
+                    .row
+                        .col-12.col-md-6
+                            .mb-3
+                                label(for='estatus') Estatus
+                                select.form-select#estatus(name='estatus', required=true)
+                                    option(value='') Selecciona un estatus
+                                    option(value='activo') Activo
+                                    option(value='inactivo') Inactivo
+                            .mb-3
+                                label(for='nombre') Nombre
+                                input.form-control#nombre(type='text', name='nombre', required=true)
+                            .mb-3
+                                label(for='apellidos') Apellidos
+                                input.form-control#apellidos(type='text', name='apellidos', required=true)
+                            .mb-3
+                                label(for='calle') Calle
+                                input.form-control#calle(type='text', name='calle', required=true)
+                            .mb-3
+                                label(for='colonia') Colonia
+                                input.form-control#colonia(type='text', name='colonia', required=true)
+                        .col-12.col-md-6
+
+                            .mb-3
+                                label(for='correo') Correo
+                                input.form-control#correo(type='email', name='correo', required=true)
+                            .mb-3
+                                label(for='imagen_input') Fotografía
+                                input.form-control.uploadImage#imagen_input(type='file' )
+                                input.form-control#img_save(type='text' style="display:none;")
+                                input.form-control#img_save_edit(type='text' style="display:none;")
+                            .mb-3
+                                label(for='telefonos') Teléfonos
+                                .phone-list
+                                    .phone-item.mb-3
+                                        input.form-control.phone-number(type='text', name='telefonos[]', required=true, placeholder='Ingresa un teléfono' maxlength="10" pattern="\d{10}")
+                                button.btn.btn-outline-primary#addPhone(type='button') Agregar otro teléfono
+            .modal-footer
+                button.btn.btn-secondary(type='button', data-bs-dismiss='modal')
+                    i.fas.fa-times.me-2
+                    | Cerrar
+                button.btn.btn-primary#saveNewAlumno(style='display:none;') Guardar
+                button.btn.btn-warning#editAlumno(style='display:none;') Guardar

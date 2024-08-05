@@ -1,0 +1,32 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title CRUD de Alumnos
+        include templates/styles
+
+
+    body
+        .container
+            h1.text-center CRUD de Alumnos
+            .d-flex.justify-content-end.mb-3
+                button.btn.btn-primary#addAlumnoBtn
+                    i.fas.fa-plus-circle.me-2
+                    | Agregar Alumno
+            table#alumnosTable.table.table-striped.table-bordered(width='100%')
+                thead
+                    tr
+                        th Nombre
+                        th Apellidos
+                        th Calle
+                        th Colonia
+                        th Correo
+                        th Fotografía
+                        th Teléfonos
+                        th Estatus
+                        th Acciones
+                tbody
+            include modals/alumnosModal
+            include templates/scripts
+
