@@ -8,7 +8,7 @@ const db = require('./db')
 //configuraciones
 
 
-app.set('port', 3001)
+app.set('port', 3019)
 app.set('appName', 'CRUD_ALUMNOS')
 
 app.set('views', path.join(__dirname, 'views'))
